@@ -1,12 +1,74 @@
-/* reset  */
+/* all selector */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
+/* element selector */
 body {
     font: 1.5rem "arial", sans-serif;
     min-width: 100vh;
+}
+
+/* class selector */
+.red {
+    background: red;
+}
+
+/* ID selector */
+#span {
+    background: rebeccapurple ;
+}
+
+/* select elements containg a class 
+    syntax: element.className
+    note: multiple classes can be chained
+        syntax: element.className1.className2.className3
+*/
+div.red {
+    margin-left: 100px;
+}
+
+/* select multiple elements 
+    syntax: elementName, elementName
+*/
+span, li {
+    font-size: 50px;
+}
+
+
+/* 
+select elements containing other elements 
+ie: parent - child   (  can be any hierachy of child) 
+syntax: parent<whitespace>child 
+*/
+div.wrapper div.red {
+    background-color: aqua;
+}
+
+/* 
+select elements containing other direct child elements 
+ie: parent - child   (  can be of direct child hireachy) 
+syntax: parent > child 
+*/
+div > span {
+    font-weight: 900;
+}
+
+/* 
+select all siblings elements based on same hierachy as the first element  
+syntax: choosenElementForHireachy ~ selectedElement
+*/
+.red ~ #span {
+    background: green;
+}
+
+/* 
+select immediate sibling , next one on the hiearchy 
+note: selects only one 
+syntax: choosenElementForHireachy + selectedElement 
+*/
+ul + li {
+    background: purple;
 }
