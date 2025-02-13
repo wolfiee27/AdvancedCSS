@@ -1,7 +1,7 @@
-//variables
-$primary-color:#272727;
-$accent-color:#ff652f;
-$text-color:#fff;
+@import './resets';
+@import './variables';
+
+
 
 //map
 $font-weights:(
@@ -11,7 +11,7 @@ $font-weights:(
 );
 
 body {
-    background: $primary-color;
+    background:  $primary-color;
     color: $text-color;
 }
 
@@ -22,7 +22,9 @@ body {
     
     p {
         font-weight: map-get($map: $font-weights, $key: bold);
-
+        &:hover{
+           color: pink; 
+        }
     }
 }
 
