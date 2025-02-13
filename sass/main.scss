@@ -5,12 +5,25 @@
     @return map-get($map: $font-weights, $key:$weight-name );
 }
 
-//map
-$font-weights:(
-    "regular":400,
-    "medium":500,
-    "bold":700
-);
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    flex-direction: $direction;
+}
+
+@mixin theme($light-theme: true){
+    @if $light-theme {
+        background: lighten($color: $primary-color, $amount: 100%);
+        color: darken($text-color,100%)
+    }
+}
+
+@mixin mobile {
+    @media (max-width:$mobile){
+        @content;
+    }
+}
 
 body {
     background:  $primary-color;
@@ -21,12 +34,19 @@ body {
 .main{
     width: 80%;
     margin: 0 auto;
-    
+    @include flexCenter(row);
     p {
         font-weight: weight(regular);
         &:hover{
            color: pink; 
         }
     }
+
+    @include mobile{
+        @include flexCenter(column);
+    }
 }
 
+.light {
+    @include theme(true)
+}

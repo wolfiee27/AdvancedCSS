@@ -12,10 +12,27 @@ body {
 .main {
   width: 80%;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 .main p {
   font-weight: 400;
 }
 .main p:hover {
   color: pink;
+}
+@media (max-width: 800px) {
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.light {
+  background: white;
+  color: black;
 }/*# sourceMappingURL=main.css.map */
