@@ -14,7 +14,7 @@ body {
   margin: 0 auto;
 }
 .main p {
-  font-weight: 700;
+  font-weight: 400;
 }
 .main p:hover {
   color: pink;
