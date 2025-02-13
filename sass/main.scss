@@ -15,4 +15,14 @@ body {
     color: $text-color;
 }
 
+//nesting
+.main{
+    width: 80%;
+    margin: 0 auto;
+    
+    p {
+        font-weight: map-get($map: $font-weights, $key: bold);
+
+    }
+}
 
